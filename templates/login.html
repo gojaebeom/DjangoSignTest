@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <h1>로그인</h1>
+    <form action="/login" method="POST">
+        {% csrf_token %}
+        <input type="email" name="email"><br>
+        <input type="password" name="password"><br>
+        {% if login_false %}
+            <p style="color:red;">{{login_false}}</p>
+        {% endif %}
+        <button>로그인</button>
+
+    </form>
+</body>
+</html>
